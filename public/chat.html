@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Whittr | Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="stylesheet" href="css/chat.css">
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
+  <script src="dist/clipboard.min.js"></script>
+</head>
+
+<body class="chat">
+          <div class="home">   
+      <center>
+        <a href="index.html">
+          <img src="assets/icon.png" width="70%" height="70%" class="menugrid" alt="home button">
+        </a>
+      </center>   
+          </div>
+
+  <div class="chat__main">
+    <ol id="messages" class="chat__messages"></ol>
+
+    <div class="chat__footer" >
+      <form id="message-form" >
+        <input name="message" id="text" type="text" placeholder="Message" autofocus autocomplete="off" onkeypress="checkstring()"/>
+        <button>Send</button>
+        
+
+<script> // Commands that you can do :o
+function checkstring() {
+    var value = document.getElementById("text").value;
+    // Commands eg: /lenny = lenny face
+    if (value == "/lenny") { cmdLenny(); } 
+    if (value == "/shrug") { cmdShrug(); }
+    if (value == "/flip") { cmdFlip(); }
+    if (value == "/cry") { cmdCry(); }
+    if (value == "/love") { cmdLove(); }
+    if (value == "/hug") { cmdHug(); }
+    if (value == "/kiss") { cmdKiss(); }
+    if (value == "/sparkle") { cmdSparkle(); }
+    if (value == "/crowd") { cmdCrowd(); }
+  
+// DO NOT DELETE THIS BRACKET
+} // DO NOT DELETE THIS BRACKET
+// DO NOT DELETE THIS BRACKET
+  
+// Command functions, where they are acutally called
+function cmdLenny() {
+document.getElementById("text").value = "( ͡° ͜ʖ ͡°)";
+}
+  
+function cmdShrug() {
+  document.getElementById("text").value = "¯\\_(ツ)_/¯";
+}
+  
+function cmdFlip() {
+  document.getElementById("text").value = "(╯°□°）╯︵ ┻━┻";
+}
+  
+function cmdCry() {
+  document.getElementById("text").value = "(╥﹏╥)";
+}
+  
+function cmdLove() {
+  document.getElementById("text").value = "(♥_♥)";
+}
+
+function cmdHug() {
+  document.getElementById("text").value = "(っ◕‿◕)っ";
+}
+  
+function cmdKiss() {
+  document.getElementById("text").value = "(づ ￣ ³￣)づ";
+}
+ 
+function cmdSparkle() {
+  document.getElementById("text").value = "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧";
+}
+  
+function cmdCrowd() {
+  document.getElementById("text").value = "(-(-_(-_-)_-)-)";
+}
+</script>
+      </form>
+    </div>
+  </div>
+       <div class="chat__sidebar">
+    <h3>People</h3>
+    <div id="users"></div>
+  </div>
+  
+
+  <script id="message-template" type="text/template">
+    <li class="message">
+      <div class="message__title">
+        <h4>{{from}}</h4>
+        <span>{{createdAt}}</span>
+      </div>
+      <div class="message__body">
+        <p>{{text}}</p>
+      </div>
+    </li>
+  </script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/libs/jquery-3.1.0.min.js"></script>
+  <script src="/js/libs/moment.js"></script>
+  <script src="/js/libs/mustache.js"></script>
+  <script src="/js/libs/deparam.js"></script>
+  <script src="/js/chat.js"></script>
+
+  </body>
+</html>
