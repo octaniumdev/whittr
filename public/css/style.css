@@ -10,7 +10,6 @@ background-color: #49c39e;
 .maincontainer {
 background: #49c39e;
   width: 80%;
-  height: ;
   border-radius: 5px;
   margin: 60px;
   text-align: center;
@@ -22,6 +21,18 @@ background-color: #49c39e;
   color: white;
   padding: 10px; 
   width: 99%
+}
+
+.button {
+  border: none;
+background-color: #49c39e;
+  color: white;
+  padding: 10px; 
+  width: 99%
+}
+
+.button:hover {
+  background-color: #38eab5;
 }
 
 .chat__messages, .chat__sidebar ul {
