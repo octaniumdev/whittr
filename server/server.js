@@ -24,6 +24,10 @@ console.log("A new user has joined Whittr!")
       return callback('Name and room name are required.');
     }
 
+    if (params.name.length > 16) {
+      return callback('Name cannot be more than 16 characters.');
+    }
+
     socket.join(params.room);
     users.removeUser(socket.id);
     users.addUser(socket.id, params.name, params.room);
