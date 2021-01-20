@@ -26,65 +26,8 @@
 
     <div class="chat__footer" >
       <form id="message-form" >
-        <input name="message" id="text" type="text" placeholder="Message" autofocus autocomplete="off" onkeypress="checkstring()"/>
+        <input name="message" id="text" type="text" placeholder="Message" autofocus autocomplete="off" />
         <button>Send</button>
-        
-
-<script> // Commands that you can do :o
-function checkstring() {
-    var value = document.getElementById("text").value;
-    // Commands eg: /lenny = lenny face
-    if (value == "/lenny") { cmdLenny(); } 
-    if (value == "/shrug") { cmdShrug(); }
-    if (value == "/flip") { cmdFlip(); }
-    if (value == "/cry") { cmdCry(); }
-    if (value == "/love") { cmdLove(); }
-    if (value == "/hug") { cmdHug(); }
-    if (value == "/kiss") { cmdKiss(); }
-    if (value == "/sparkle") { cmdSparkle(); }
-    if (value == "/crowd") { cmdCrowd(); }
-  
-// DO NOT DELETE THIS BRACKET
-} // DO NOT DELETE THIS BRACKET
-// DO NOT DELETE THIS BRACKET
-  
-// Command functions, where they are acutally called
-function cmdLenny() {
-document.getElementById("text").value = "( ͡° ͜ʖ ͡°)";
-}
-  
-function cmdShrug() {
-  document.getElementById("text").value = "¯\\_(ツ)_/¯";
-}
-  
-function cmdFlip() {
-  document.getElementById("text").value = "(╯°□°）╯︵ ┻━┻";
-}
-  
-function cmdCry() {
-  document.getElementById("text").value = "(╥﹏╥)";
-}
-  
-function cmdLove() {
-  document.getElementById("text").value = "(♥_♥)";
-}
-
-function cmdHug() {
-  document.getElementById("text").value = "(っ◕‿◕)っ";
-}
-  
-function cmdKiss() {
-  document.getElementById("text").value = "(づ ￣ ³￣)づ";
-}
- 
-function cmdSparkle() {
-  document.getElementById("text").value = "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧";
-}
-  
-function cmdCrowd() {
-  document.getElementById("text").value = "(-(-_(-_-)_-)-)";
-}
-</script>
       </form>
     </div>
   </div>
