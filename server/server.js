@@ -24,10 +24,10 @@ var socketsh = crypto.createHash('sha512').update(socket.id).digest('hex');
   socket.on('join', (params, callback) => {
     if (!isRealString(params.name) || !isRealString(params.room)) {
       return callback('Name and room name are required.');
-    } else {
+    }
     if (params.name.length > 16) {
       return callback('Name cannot be more than 16 characters.');
-    } else {
+    }
     var roomsh = crypto.createHash('sha512').update(params.room).digest('hex');
     socket.join(roomsh);
     users.removeUser(socketsh);
@@ -38,7 +38,6 @@ var socketsh = crypto.createHash('sha512').update(socket.id).digest('hex');
     const randomOpening = opening[Math.floor(Math.random() * opening.length)];
     socket.broadcast.to(roomsh).emit('newMessage', generateMessage('Server - Welcome', `"${params.name}" ${randomOpening}`));
     callback();
-    };
   });
 
   socket.on('createMessage', (message, callback) => {
