@@ -25,6 +25,11 @@ var socketsh = crypto.createHash('sha512').update(socket.id).digest('hex');
     if (!isRealString(params.name) || !isRealString(params.room)) {
       return callback('Name and room name are required.');
     }
+
+    if (params.name.length > 16) {
+      return callback('Name cannot be more than 16 characters.');
+    }
+
     var roomsh = crypto.createHash('sha512').update(params.room).digest('hex');
     socket.join(roomsh);
     users.removeUser(socketsh);
