@@ -7,4 +7,4 @@ Please join the Cob:web Development discord to contribute to our projects: https
 
 # Made with love by Adam Salt, Marco Orani and our Open source contributors: 
 
-73#6872 - Contributing a fix in server.js so that usernames cannot be over 16 characters by editing the URL.
+TheWastle (GitHub) - Contributing a fix in server.js so that usernames cannot be over 16 characters by editing the URL.
