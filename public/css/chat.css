@@ -39,6 +39,7 @@ button  {
 
 li, ul {
     border-radius: 5px;
+    text-align: center;
 }
 
 h3 {
