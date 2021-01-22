@@ -1,5 +1,3 @@
-
-
 button  {
   border: none;
   color: #fff;
@@ -39,7 +37,6 @@ button  {
 
 li, ul {
     border-radius: 5px;
-    text-align: center;
 }
 
 h3 {
@@ -61,7 +58,9 @@ button:hover {
     transition: opacity .3s ease;
 }
 
-
+.users {
+  text-align: center;
+}
 
 .centered-form { 
   display: flex;
