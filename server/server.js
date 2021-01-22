@@ -2,6 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
+const crypto = require('crypto');
 
 const {generateMessage, generateLocationMessage} = require('./utils/message');
 const {isRealString} = require('./utils/validation');
@@ -18,6 +19,7 @@ app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
 console.log("A new user has joined Whittr!")
+var socketsh = crypto.createHash('sha512').update(socket.id).digest('hex');
 
   socket.on('join', (params, callback) => {
     if (!isRealString(params.name) || !isRealString(params.room)) {
@@ -28,32 +30,30 @@ console.log("A new user has joined Whittr!")
       return callback('Name cannot be more than 16 characters.');
     }
 
-    socket.join(params.room);
-    users.removeUser(socket.id);
-    users.addUser(socket.id, params.name, params.room);
-
-    io.to(params.room).emit('updateUserList', users.getUserList(params.room));
+    var roomsh = crypto.createHash('sha512').update(params.room).digest('hex');
+    socket.join(roomsh);
+    users.removeUser(socketsh);
+    console.log(socketsh);
+    console.log(socketsh);
+    users.addUser(socketsh, params.name, roomsh);
+    io.to(roomsh).emit('updateUserList', users.getUserList(roomsh));
     socket.emit('newMessage', generateMessage('Server', 'Welcome to Whittr!'));
-   
     const opening = ["has entered the arena!", "is here to fight!", "is here to chew gum and fight crime!", "has stolen your pizza!", "just joined the chat, glhf!", "just joined, everyone pretend you're busy!", "joined your party.", "We have been expecting you ( ͡° ͜ʖ ͡°)", "has brought pizza!", "please leave your weapons by the door.", "has appeared.", "just slid into the chat ( ͡° ͜ʖ ͡°)", "has just landed.", "needs to be nerfed", "is here to slide into your DMs"];
     const randomOpening = opening[Math.floor(Math.random() * opening.length)];
-    socket.broadcast.to(params.room).emit('newMessage', generateMessage('Server - Welcome', `"${params.name}" ${randomOpening}`));
-
+    socket.broadcast.to(roomsh).emit('newMessage', generateMessage('Server - Welcome', `"${params.name}" ${randomOpening}`));
     callback();
   });
 
   socket.on('createMessage', (message, callback) => {
-    var user = users.getUser(socket.id);
-
+    var user = users.getUser(socketsh);
     if (user && isRealString(message.text)) {
       io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
     }
-
     callback();
   });
 
   socket.on('disconnect', () => {
-    var user = users.removeUser(socket.id);
+    var user = users.removeUser(socketsh);
 
     if (user) {
       io.to(user.room).emit('updateUserList', users.getUserList(user.room));

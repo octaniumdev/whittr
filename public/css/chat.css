@@ -4,6 +4,7 @@ button  {
   border: none;
   color: #fff;
   padding: 10px; 
+  border-radius: 5px;
 }
 
 
@@ -52,7 +53,7 @@ button {
   cursor: pointer;
   color:black;
   font-size: 20px;
-
+  border-radius: 5px;
 }
 
 button:hover {
@@ -186,6 +187,7 @@ button:hover {
   border: none;
   padding: 10px;
   flex-grow: 1;
+  border-radius: 5px;
 }
 
 .message {
@@ -226,7 +228,8 @@ button:hover {
   }
   
   .chat__footer button {
-    margin-right: 0
+    margin-right: 0;
+    border-radius: 5px;
   }
 }
 
