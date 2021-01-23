@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Whittr | Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body class="chat">
+          <div class="home">   
+      <center>
+        <a href="index.html">
+          <img src="assets/icon.png" width="70%" height="70%" class="menugrid" alt="home button">
+        </a>
+      </center>   
+          </div>
+
+  <div class="chat__main">
+    <ol id="messages" class="chat__messages"></ol>
+
+    <div class="chat__footer" >
+      <form id="message-form" >
+        <input name="message" id="text" type="text" placeholder="Message" autofocus autocomplete="off" />
+        <button>Send</button>
+      </form>
+    </div>
+  </div>
+       <div class="chat__sidebar">
+    <h3>Online Users:</h3>
+    <div id="users"></div>
+  </div>
+  
+
+  <script id="message-template" type="text/template">
+    <li class="message">
+      <div class="message__title">
+        <h4>{{from}}</h4>
+        <span>{{createdAt}}</span>
+      </div>
+      <div class="message__body">
+        <p>{{text}}</p>
+      </div>
+    </li>
+  </script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/libs/jquery-3.1.0.min.js"></script>
+  <script src="/js/libs/moment.js"></script>
+  <script src="/js/libs/mustache.js"></script>
+  <script src="/js/libs/deparam.js"></script>
+  <script src="/js/chat.js"></script>
+
+  </body>
+</html>
