@@ -198,7 +198,7 @@ socket.on("disconnect", () => {
     }
     });
 });
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 server.listen(port, () => {
   console.log(`Server is up on port`);
 });
