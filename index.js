@@ -13,17 +13,11 @@ var crypto = require("crypto"),
     fs = require("fs"),
     sio = require("socket.io"),
     moment = require('moment'),
-https = require("https");
+http = require("http");
 
 var app = express();
-var server = https.createServer({
-    key: process.env.KEY,
-    cert: process.env.CERT,
-    requestCert: true,
-    rejectUnauthorized: false
-},app);
-server.listen(443);
-var io = sio(server).listen(server);
+var server = http.createServer(app);
+var io = sio(server)
 
 var secret = process.env.SECRET
 var aeshash = process.env.AES;
@@ -203,4 +197,8 @@ socket.on("disconnect", () => {
     io.to(user.room).emit("newMessage", generateMessage("Server - Leave", `"${user.name}" ${randomLeave}`));
     }
     });
+});
+
+server.listen(3000, () => {
+  console.log(`Server is up on 3000`);
 });
