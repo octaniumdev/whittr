@@ -67,7 +67,7 @@ var isRealString = (str) => {
 };
 
 var dehashenc = ((val, hash) => {
-    let cipher = crypto.createCipheriv("aes-256-cbc", hash, IV);
+    let cipher = crypto.createCipheriv("aes-256-cbc", aeshash, IV);
     let encrypted = cipher.update(val, "utf8", "base64");
     encrypted += cipher.final("base64");
     return encrypted;
