@@ -199,6 +199,6 @@ socket.on("disconnect", () => {
     });
 });
 
-server.listen(80, () => {
-  console.log(`Server is up on 80`);
+server.listen(8080, () => {
+  console.log(`Server is up on 8080`);
 });
