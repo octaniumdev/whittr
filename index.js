@@ -19,9 +19,9 @@ var app = express();
 var server = http.createServer(app);
 var io = sio(server)
 
-var secret = `${process.env.SECRET}`;
-var aeshash = `${process.env.AES}`;
-var IV = `${process.env.IVKEY}`;
+var secret = crypto.randomBytes(41);
+var aeshash = crypto.randomBytes(32);
+var IV = crypto.randomBytes(16);
 
 class UserID {
 constructor () {
