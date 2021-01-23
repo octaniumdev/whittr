@@ -1,29 +1,24 @@
 {
-  "name": "mychatapp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "whittr",
+  "version": "0.0.0",
+  "description": "Whittr is a free, privacy-centric and open source chatting web-application where no users are required to sign up, all you need to do is create a room and share the Pin with your friends to begin chatting!",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
-    "test": "mocha server/**/*.test.js",
-    "test-watch": "nodemon --exec 'npm test'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "9.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobwebdev/whittr.git"
   },
-  "author": "",
-  "license": "MIT",
+  "author": "Cob:web",
+  "license": "SEE LICENSE IN ./LICENSE",
+  "bugs": {
+    "url": "https://github.com/cobwebdev/whittr/issues"
+  },
+  "homepage": "https://github.com/cobwebdev/whittr#readme",
   "dependencies": {
-    "@joeattardi/emoji-button": "^3.1.1",
-    "clipboard": "^2.0.6",
-    "express": "^4.16.4",
-    "moment": "^2.24.0",
-    "socket.io": "^2.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^4.9.0",
-    "expect": "^1.20.2",
-    "mocha": "^3.0.2",
-    "nodemon": "^1.10.2"
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^3.1.0"
   }
 }
