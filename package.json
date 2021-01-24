@@ -1,0 +1,25 @@
+{
+  "name": "whittr",
+  "version": "0.0.0",
+  "description": "Whittr is a free, privacy-centric and open source chatting web-application where no users are required to sign up, all you need to do is create a room and share the Pin with your friends to begin chatting!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobwebdev/whittr.git"
+  },
+  "author": "Cob:web",
+  "license": "SEE LICENSE IN ./LICENSE",
+  "bugs": {
+    "url": "https://github.com/cobwebdev/whittr/issues"
+  },
+  "homepage": "https://github.com/cobwebdev/whittr#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^3.1.0"
+  }
+}
