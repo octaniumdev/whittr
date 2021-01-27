@@ -11,6 +11,7 @@ HTTPS: "TRUE"
 var crypto = require("crypto"),
     express = require("express"),
     fs = require("fs"),
+    path = require('path'),
     sio = require("socket.io"),
     moment = require('moment'),
 http = require("http");
