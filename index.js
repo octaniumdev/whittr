@@ -22,7 +22,7 @@ var io = sio(server)
 var secret = crypto.randomBytes(41);
 var aeshash = crypto.randomBytes(32);
 var IV = crypto.randomBytes(16);
-const publicPath = path.join(__dirname, './public');
+const publicPath = path.join(__dirname, '/public');
 
 class UserID {
 constructor () {
