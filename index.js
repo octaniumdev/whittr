@@ -179,8 +179,8 @@ socket.on("join", (req, res) => {
 });
 
 socket.on("createMessage", (request, res) => {
-    if(request.text.length >= 128) {
-        socket.emit("newMessage", generateMessage("Server", "Your message cannot be more then 128 characters."));
+    if(request.text.length >= 200) {
+        socket.emit("newMessage", generateMessage("Server", "Your message cannot be more then 200 characters."));
     } else {
     var user = users.getUser(id);
     if(user && isRealString(request.text)) {
