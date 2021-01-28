@@ -94,6 +94,10 @@ app.get('/', function (req, res) {
     res.sendFile(publicPath + "/index.html");
 });
 
+app.get('/index', function (req, res) {
+    res.sendFile(publicPath + "/index.html");
+});
+
 app.get('/chat', function (req, res) {
     res.sendFile(publicPath + "/chat.html");
 });
