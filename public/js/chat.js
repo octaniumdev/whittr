@@ -1,5 +1,5 @@
 var socket = io();
-var moment = require('moment');
+var moment = moment();
 
 function scrollToBottom () {
   // Selectors
