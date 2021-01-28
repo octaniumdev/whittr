@@ -12,10 +12,10 @@ var crypto = require("crypto"),
     express = require("express"),
     fs = require("fs"),
     sio = require("socket.io"),
-    moment = require('moment'),
     path = require('path'),
 http = require("http");
 
+var moment = require('moment');
 var app = express();
 var server = http.createServer(app);
 var io = sio(server)
