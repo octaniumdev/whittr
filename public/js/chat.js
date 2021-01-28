@@ -1,5 +1,4 @@
 var socket = io();
-var moment = moment();
 
 function scrollToBottom () {
   // Selectors
