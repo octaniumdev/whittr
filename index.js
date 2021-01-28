@@ -88,6 +88,8 @@ var decrypt = ((encrypted) => {
     return (decrypted + decipher.final("utf8"));
 });
 
+app.use(express.static(publicPath));
+
 app.get('/', function (req, res) {
     res.sendFile(publicPath + "/index.html");
 });
