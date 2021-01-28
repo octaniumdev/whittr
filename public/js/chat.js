@@ -1,10 +1,10 @@
 var socket = io();
+var moment = require('moment');
 
 function scrollToBottom () {
   // Selectors
   var messages = jQuery('#messages');
   var newMessage = messages.children('li:last-child');
-  var moment = require('moment');
   // Heights
   var clientHeight = messages.prop('clientHeight');
   var scrollTop = messages.prop('scrollTop');
