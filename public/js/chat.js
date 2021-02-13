@@ -44,8 +44,7 @@ socket.on('updateUserList', function (users) {
 });
 
 socket.on('updateROOMID', function (id) {
-  var ol = jQuery('<ol></ol>');
-  ol.append(jQuery('<h3></h3>').text(id));
+  ol.append(jQuery('<li></li>').text(id));
   jQuery('#roomid').html(ol);
 });
 
