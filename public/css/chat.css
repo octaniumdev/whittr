@@ -113,7 +113,7 @@ button:hover {
   border-left-color: #17192e;
 }
 
-.chat__footer, .chat__sidebar li {
+.chat__footer, .chat__sidebar li ol {
   background: white;
   padding: 10px;
 }
