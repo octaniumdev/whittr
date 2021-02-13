@@ -1,8 +1,8 @@
 /*
 Name: "Whittr",
 Description: "Whittr is a free, privacy-centric and open source chatting web-application where no users are required to sign up, all you need to do is create a room and share the Pin with your friends to begin chatting!"
-Version: "1.0.0"
-Build: "1.0.0-Beta"
+Version: "1.3.0"
+Build: "1.3.0-Beta"
 Owner: "Cob:web"
 HTTPS: "CLOUDFLARE WORKER"
 .ENV: "TRUE"
@@ -171,7 +171,8 @@ socket.on("join", (req, res) => {
     users.removeUser(id);
     users.addUser(id, req.name, room);
     io.to(room).emit("updateUserList", users.getUserList(room));
-    socket.emit("newMessage", generateMessage("Server", "Welcome to Whittr!"));
+    socket.emit("newMessage", generateMessage("Server", `Welcome to Whittr, your room code is ${req.room}.`));
+    socket.emit("updateROOMID", `${req.room}`);
     var opening = ["has entered the arena!", "is here to fight!", "is here to chew gum and fight crime!", "has stolen your pizza!", "just joined the chat, glhf!", "just joined, everyone pretend you're busy!", "joined your party.", "We have been expecting you ( ͡° ͜ʖ ͡°)", "has brought pizza!", "please leave your weapons by the door.", "has appeared.", "just slid into the chat ( ͡° ͜ʖ ͡°)", "has just landed.", "needs to be nerfed", "is here to slide into your DMs"];
     var randomOpening = opening[Math.floor(Math.random() * opening.length)];
     socket.broadcast.to(room).emit("newMessage", generateMessage("Server - Welcome", `"${req.name}" ${randomOpening}`));
