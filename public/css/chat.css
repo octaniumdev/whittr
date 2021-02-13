@@ -118,11 +118,6 @@ button:hover {
   padding: 10px;
 }
 
-.chat__footer, .chat__sidebar ol {
-  background: white;
-  padding: 10px;
-}
-
 .chat__sidebar h3 {
   color: #e6eaee;
   margin: 10px 20px;
