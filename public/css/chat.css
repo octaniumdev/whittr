@@ -35,7 +35,7 @@ button  {
 }
 
 
-li, ul {
+li, ul, ol {
     border-radius: 5px;
 }
 
@@ -113,7 +113,12 @@ button:hover {
   border-left-color: #17192e;
 }
 
-.chat__footer, .chat__sidebar li ol {
+.chat__footer, .chat__sidebar li {
+  background: white;
+  padding: 10px;
+}
+
+.chat__footer, .chat__sidebar ol {
   background: white;
   padding: 10px;
 }
