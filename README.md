@@ -7,7 +7,7 @@ Whittr is a free, privacy-centric and open source chatting web-application where
 
 Adam Salt - Lead Developer, front-end UI/UX developer
 
-Marco Orani - Backend Developer, Penetration Tester
+Marco Orani - Former Backend Developer, Penetration Tester
 
 TheWastl (GitHub) - Contributing a fix in server.js so that usernames cannot be over 16 characters by editing the URL.
 
