@@ -11,4 +11,4 @@ Marco Orani - Former Backend Developer, Penetration Tester
 
 TheWastl (GitHub) - Contributing a fix in server.js so that usernames cannot be over 16 characters by editing the URL.
 
-#### Please join the Cob:web Development discord to contribute to our projects: https://discord.gg/RsJDffM9gd
+#### Please join the Cob:web Development discord to contribute to our projects: https://cob-web.xyz/discord/
