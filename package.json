@@ -12,7 +12,7 @@
     "url": "git+https://github.com/cobwebdev/whittr.git"
   },
   "author": "Cob:web",
-  "license": "SEE LICENSE IN ./LICENSE",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cobwebdev/whittr/issues"
   },
