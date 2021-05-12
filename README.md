@@ -1,5 +1,5 @@
 # Whittr
-The official repository for https://whittr.xyz
+The official repository for https://cob-web.xyz/whittr/
 
 Whittr is a free, privacy-centric and open source chatting web-application where no users are required to sign up, all you need to do is create a room and share the Pin with your friends to begin chatting!
 
